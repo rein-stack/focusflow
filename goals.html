@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>FocusFlow - Goals</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <header class="container">
+    <h1>FocusFlow</h1>
+    <nav>
+     <a href="index.html">Focus</a>
+  <a href="goals.html">Goals</a>
+  <a href="tracker.html">Subscriptions</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section id="goals">
+      <h2>My Goals</h2>
+
+
+<form id="goal-form" autocomplete="off" style="display:flex; gap:0.5rem; align-items:center;">
+    <input id="goal-input" type="text" placeholder="Add a goal..." />
+        <div class="custom-select">
+            <div class="selected">Work</div>
+            <div class="options">
+            <div data-value="work">Work</div>
+            <div data-value="study">Study</div>
+            <div data-value="health">Health</div>
+            <div data-value="life">Life</div>
+            </div>
+        </div>
+    <button type="submit" id="goalbtn">Add</button>
+</form>
+
+
+        <select id="goal-category" hidden>
+          <option value="work">Work</option>
+          <option value="study">Study</option>
+          <option value="health">Health</option>
+          <option value="life">Life</option>
+        </select>
+        
+      
+
+      <div class="goal-lists">
+        <div class="list-block">
+          <h3>Work Goals</h3>
+          <ul id="work-list"></ul>
+        </div>
+
+        <div class="list-block">
+          <h3>Study Goals</h3>
+          <ul id="study-list"></ul>
+        </div>
+
+        <div class="list-block">
+          <h3>Health Goals</h3>
+          <ul id="health-list"></ul>
+        </div>
+
+        <div class="list-block">
+          <h3>Life Goals</h3>
+          <ul id="life-list"></ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="./goals.js"></script>
+</body>
+</html>

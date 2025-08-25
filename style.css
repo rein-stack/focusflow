@@ -1,0 +1,597 @@
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;400;600&display=swap');
+
+:root {
+  --pink: #FFD6E0;
+  --purple: #E7C6FF;
+  --blue: #CDE7FF;
+  --mint: #D6F5E7;
+  --text: #444;
+  --white: #fff;
+}
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: var(--pink) url("https://www.transparenttextures.com/patterns/tiny-hearts.png") repeat;
+  background-size: 150px 150px;
+  color: var(--text);
+  line-height: 1.6;
+}
+
+/* Header + Nav */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /*background: var(--purple);*/
+  background: #bf70f7;
+  padding: 1rem 2rem;
+  border-radius: 0 0 20px 20px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+header h1 {
+  font-family: 'Pacifico', cursive;
+  font-size: 1.8rem;
+  color: #fff;
+}
+
+/* Center nav links and hover background */
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex: 1; /* take remaining space for perfect centering */
+}
+
+nav a {
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: 600;
+  padding: 0.4rem 0.8rem;
+  border-radius: 12px;
+  
+  transition: background 0.3s, transform 0.2s;
+}
+
+nav a:hover {
+  background: rgba(9, 9, 9, 0.2); /* hover background only */
+  transform: scale(1.05);
+   border-radius: 20px;
+   animation: bounce 0.7s ease;
+}
+
+nav a i {
+  margin-right: 0.4rem;
+  color: #ffffff;
+  transition: transform 0.2s;
+}
+
+nav a:hover i {
+  transform: scale(1.2);
+  
+  animation: bounce 0.7s ease;
+
+}
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-3px); }
+}
+
+/* Sections */
+main {
+  display: grid;
+  gap: 2rem;
+  padding: 2rem;
+}
+
+section {
+  background: var(--white);
+  border-radius: 20px;
+  padding: 2rem 2rem 3rem 2rem; /* extra bottom padding for buttons */
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+  animation: fadeUp 0.6s ease both;
+}
+
+section h2 {
+  font-family: 'Pacifico', cursive;
+  color: var(--purple);
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+/* Lists */
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  background: var(--blue);
+  margin: 0.5rem 0;
+  padding: 0.6rem 1rem;
+  border-radius: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+li.done {
+  text-decoration: line-through;
+  opacity: 0.6;
+}
+
+/* Buttons */
+button {
+  background: var(--mint);
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: transform 0.2s, background 0.3s;
+}
+
+button:hover {
+  background: var(--blue);
+  transform: translateY(-2px) scale(1.05);
+}
+
+/* Timer clock */
+#clock {
+  font-size: 3rem;
+  font-weight: bold;
+  color: var(--pink);
+  text-align: center;
+  margin: 1rem 0;
+  animation: pulse 1.5s infinite;
+}
+
+/* Animations */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+/* --------------------
+   Forms & Inputs
+-------------------- */
+input[type="text"],
+input[type="number"],
+input[type="date"],
+select {
+  width: 100%;
+  padding: 0.6rem 1rem;
+  margin-top: 0.3rem;
+  margin-bottom: 1rem;
+  border: 2px solid #ffd6e0; /* pastel border */
+  border-radius: 12px;
+  font-size: 1rem;
+  outline: none;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  transition: all 0.2s ease;
+  background: #fff;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus,
+input[type="date"]:focus,
+select:focus {
+  border-color: #c3aed6;
+  box-shadow: 0 4px 12px rgba(195, 174, 214, 0.4);
+}
+
+/* Form labels */
+label {
+  display: block;
+  font-weight: 500;
+  margin-top: 0.5rem;
+  color: var(--text);
+  font-size: 0.95rem;
+}
+
+/* Inline label for Today checkbox */
+.today-inline {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-bottom: 1rem;
+}
+
+/* Form buttons */
+form button {
+  background: linear-gradient(135deg, #ffd6e0, #e7c6ff);
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 0.5rem;
+  margin-bottom: 10px;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  user-select: none;
+}
+
+form button:hover {
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.12);
+}
+
+/* --------------------
+   Timer Settings Inline + Center
+-------------------- */
+.settings {
+  display: flex;
+  justify-content: center; /* center the row */
+  align-items: flex-end; /* align inputs nicely */
+  gap: 2rem; /* space between Work / Break / Mode */
+  flex-wrap: wrap; /* wrap on smaller screens */
+  margin-top: 1rem;
+}
+
+.settings label {
+  display: flex;
+  flex-direction: column; /* label above input */
+  margin-top: 0;
+}
+
+/* Timer settings inputs */
+.settings input,
+.settings select {
+  width: 100px;
+  padding: 0.4rem 0.6rem;
+  border-radius: 10px;
+  border: 2px solid #ffd6e0;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.05);
+  text-align: center;
+  font-size: 1rem;
+  background: #fff;
+}
+
+.settings input:focus,
+.settings select:focus {
+  border-color: #c3aed6;
+  box-shadow: 0 4px 10px rgba(195, 174, 214, 0.4);
+}
+
+/* --------------------
+   Timer Buttons
+-------------------- */
+.controls {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin: 1.5rem 0 2rem 0; /* add spacing below buttons */
+}
+
+.controls button {
+  background: linear-gradient(135deg, #ffd6e0, #cde7ff);
+  border: none;
+  padding: 0.8rem 1.6rem;
+  font-size: 1rem;
+  border-radius: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: all 0.2s ease;
+}
+
+.controls button:hover {
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.12);
+}
+
+/* --------------------
+   Form & Timer Cards Padding
+-------------------- */
+section form,
+section .settings {
+  margin-top: 1rem;
+}
+
+
+/* Cute checkbox wrapper */
+.cute-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 1rem;
+  margin-bottom: 0.6rem;
+  padding: 0.3rem 0.5rem;
+  border-radius: 10px;
+  transition: all 0.2s ease;
+}
+
+.cute-checkbox:hover {
+  background: rgba(255, 214, 224, 0.3);
+}
+
+/* Bigger, rounded checkbox */
+.cute-checkbox-input {
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+  accent-color: var(--pink); /* cute pastel checkmark */
+  border-radius: 50%; /* fully rounded */
+  border: none; /* remove default black border */
+  background-color: #fff; /* optional: white background inside */
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05); /* soft shadow for 3D effect */
+  transition: all 0.2s ease;
+}
+
+.cute-checkbox-input:checked {
+  background-color: var(--pink); /* pastel fill when checked */
+}
+.cute-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+.cute-checkbox input[type="checkbox"] {
+  display: none;
+}
+
+.cute-checkbox .checkmark {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #fff;
+  border: 2px solid var(--pink);
+  display: inline-block;
+  position: relative;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.cute-checkbox input[type="checkbox"]:checked + .checkmark {
+  background: var(--pink);
+  border-color: var(--pink);
+}
+
+.cute-checkbox .checkmark::after {
+  content: '';
+  position: absolute;
+  left: 8px;
+  top: 4px;
+  width: 6px;
+  height: 12px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+  opacity: 0;
+}
+
+.cute-checkbox input[type="checkbox"]:checked + .checkmark::after {
+  opacity: 1;
+}
+
+/* collapsed goals*/
+
+.list-block {
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 0.5rem 1rem;
+  margin-bottom: 1rem;
+  background: #fffafc;
+  transition: all 0.3s ease;
+}
+
+.list-block h3 {
+  margin: 0;
+  padding: 0.5rem 0;
+  font-size: 1.1rem;
+  color: #333;
+  user-select: none;
+}
+
+.list-block ul {
+  margin-top: 0.5rem;
+  padding-left: 1rem;
+  list-style: none;
+}
+
+
+
+/* Form styling */
+#goal-form {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+/* Input field */
+#goal-input {
+  flex: 1;
+  padding: 0.5rem 0.8rem;
+  border-radius: 12px;
+  border: 1px solid #ddd;
+  outline: none;
+  font-size: 1rem;
+  background-color: #fffafc;
+  transition: border 0.2s ease;
+}
+
+#goal-input:focus {
+  border-color: #ffb6c1;
+  box-shadow: 0 0 5px rgba(255,182,193,0.4);
+}
+
+/* Cute dropdown */
+#goal-category {
+  padding: 0.5rem 0.8rem;
+  border-radius: 12px;
+  border: 1px solid #ddd;
+  outline: none;
+  background-color: #fffafc;
+  font-size: 1rem;
+  appearance: none; /* remove default arrow */
+ 
+  background-repeat: no-repeat;
+  background-position: right 0.8rem center;
+  background-size: 10px 6px;
+  cursor: pointer;
+  transition: border 0.2s ease;
+}
+
+#goal-category:focus {
+  border-color: #ffb6c1;
+  box-shadow: 0 0 5px rgba(255,182,193,0.4);
+}
+
+/* Submit button */
+#goal-form button {
+  padding: 0.5rem 1rem;
+  border-radius: 12px;
+  border: none;
+  background-color: #ffb6c1;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+#goal-form button:hover {
+  background-color: #ff99aa;
+}
+
+
+.custom-select {
+  position: relative;
+  width: 150px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.custom-select .selected {
+  padding: 0.5rem 0.8rem;
+  border-radius: 12px;
+  background-color: #fffafc;
+  border: 1px solid #ddd;
+}
+
+.custom-select .options {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background-color: #fff0f5; /* ✅ This is the menu background you want */
+  border-radius: 12px;
+  margin-top: 4px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  z-index: 100;
+}
+
+.custom-select .options div {
+  padding: 0.5rem 0.8rem;
+  transition: background 0.2s ease;
+}
+
+.custom-select .options div:hover {
+  background-color: #ffd6e0;
+}
+
+
+
+/*************
+new dropdown*/
+
+/* Flex container for the form */
+#goal-form {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center; /* vertically aligns input and dropdown */
+}
+
+/* Input box for the goal text */
+#goal-input {
+  padding: 0.5rem 0.8rem;
+  border-radius: 12px;
+  border: 1px solid #ddd;
+  height: 40px;       /* same height as dropdown */
+  width: 55%;         /* slightly smaller to give more room */
+  box-sizing: border-box;
+  vertical-align: middle; /* ensure text aligns with dropdown */
+}
+
+/* Custom dropdown wrapper */
+.custom-select {
+  position: relative;
+  width: 28%;         /* slightly smaller width */
+  display: inline-block;
+  vertical-align: middle; /* aligns perfectly with input box */
+  padding-bottom: 10px;
+}
+
+#goalbtn{
+    padding-bottom: 10px;
+    position: relative;
+    height: 40px;      /* slightly smaller width */
+    display: inline-block;
+    vertical-align: middle; /* aligns perfectly with input box */
+    padding-bottom: 10px;
+    margin-top: 0%;
+}
+
+/* Dropdown selected value */
+.custom-select .selected {
+  padding: 0.5rem 0.8rem;
+  border-radius: 12px;
+  background-color: #fffafc;
+  border: 1px solid #ddd;
+  height: 40px;       /* match input height */
+  line-height: 1.2;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center; /* vertically centers text */
+}
+
+/* Options container */
+.custom-select .options {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background-color: #fff0f5;
+  border-radius: 12px;
+  margin-top: 4px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  z-index: 100;
+}
+
+/* Options inside dropdown */
+.custom-select .options div {
+  padding: 0.5rem 0.8rem;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.custom-select .options div:hover {
+  background-color: #ffd6e0;
+}
+
+

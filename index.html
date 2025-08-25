@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FocusFlow</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="R.png">
+  <link rel="stylesheet" href="./style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  
+</head>
+<body>
+<audio id="beep" src="sounds/ding.mp3" preload="auto"></audio>
+
+  <header class="container">
+    <h1>FocusFlow</h1>
+    <nav>
+  <a href="index.html"><i class="fa-regular fa-clock"></i> Focus </a>
+  <a href="goals.html"><i class="fa-solid fa-bullseye"></i> Goals</a>
+  <a href="tracker.html"><i class="fa fa-credit-card"></i> Subscriptions</a>
+</nav>
+
+  </header>
+
+  <main class="container grid">
+    <!-- Tasks -->
+    <section id="tasks">
+      <h2>Tasks</h2>
+
+      <form id="task-form" autocomplete="off">
+        <input id="task-input" type="text" placeholder="Add a task..." />
+        <label class="today-inline">
+          <input id="task-today" type="checkbox" />
+          Add to (Focusing on)
+        </label>
+        <button type="submit">Add</button>
+      </form>
+
+      <div class="lists">
+        <div class="list-block">
+          <h3>All Tasks</h3>
+          <ul id="all-list"></ul>
+        </div>
+
+        <div class="list-block">
+          <h3>Focusing on</h3>
+          <ul id="today-list"></ul>
+        </div>
+      </div>
+    </section>
+    
+
+    <!-- Timer -->
+    <section id="timer">
+      <h2>Timer</h2>
+
+      <div id="clock">40:00</div>
+
+      <div class="controls">
+        <button id="start">Start</button>
+        <button id="pause">Pause</button>
+        <button id="finish">Finish</button>
+      </div>
+
+      <div class="settings">
+        <label>Work (min)
+          <input id="work-min" type="number" min="1" value="40" />
+        </label>
+        <label>Break (min)
+          <select id="break-min">
+            <option value="5">5</option>
+            <option value="15">15</option>
+          </select>
+        </label>
+        <label>Mode
+          <select id="mode">
+            <option value="work">Work</option>
+            <option value="break">Break</option>
+          </select>
+        </label>
+      </div>
+
+      <audio id="beep" src="" preload="auto"></audio>
+    </section>
+  </main>
+
+
+  
+
+  <script src="./app.js"></script>
+</body>
+</html>

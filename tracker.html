@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>FocusFlow - Subscriptions</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <header class="container">
+    <h1>FocusFlow</h1>
+    <nav>
+      <a href="index.html">Focus</a>
+      <a href="goals.html">Goals</a>
+      <a href="tracker.html">Subscriptions</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section id="subscriptions">
+      <h2>My Subscriptions</h2>
+
+      <form id="sub-form" autocomplete="off">
+        <input id="sub-name" type="text" placeholder="Service name (e.g. Netflix)" />
+        <label>Start date:
+          <input id="sub-start" type="date" required />
+        </label>
+        <label>Duration (days):
+          <input id="sub-days" type="number" min="1" required />
+        </label>
+        <button type="submit">Add</button>
+      </form>
+
+      <div class="sub-list">
+        <h3>Active Subscriptions</h3>
+        <ul id="sub-list"></ul>
+      </div>
+    </section>
+  </main>
+
+  <script src="./tracker.js"></script>
+</body>
+</html>
